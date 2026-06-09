@@ -4,9 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Maria Moisés | Front-End Developer</title>
-
+    <title>EE Unidade Polo | Maria Moisés</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
@@ -21,15 +19,15 @@
          :root {
             --rosa: #E754A6;
             --rosa-claro: #FFF2F8;
-            --texto: #1F2937;
-            --cinza: #6B7280;
+            --texto-principal: #1F2937;
+            --texto-secundario: #6B7280;
             --borda: #E5E7EB;
-            --fundo: #FAFAFA;
+            --fundo-site: #FAFAFA;
         }
         
         body {
             background: white;
-            color: var(--texto);
+            color: var(--texto-principal);
         }
         
         .container {
@@ -37,6 +35,28 @@
             max-width: 1200px;
             margin: auto;
         }
+        /* Topbar */
+        
+        .topbar {
+            background: var(--rosa);
+            color: white;
+            font-size: 0.85rem;
+            padding: 10px 0;
+        }
+        
+        .topbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .topbar-left {
+            display: flex;
+            gap: 20px;
+        }
+        /* Header */
         
         header {
             position: sticky;
@@ -53,40 +73,60 @@
             padding: 20px 0;
         }
         
-        .logo {
-            font-size: 1.3rem;
+        .logo-container h1 {
+            font-size: 1.5rem;
             font-weight: 800;
         }
         
-        .logo span {
+        .logo-container h1 span {
             color: var(--rosa);
+        }
+        
+        .logo-container p {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--texto-secundario);
+            margin-top: 2px;
         }
         
         .menu {
             display: flex;
+            align-items: center;
             gap: 25px;
         }
         
         .menu a {
             text-decoration: none;
-            color: var(--texto);
+            color: var(--texto-principal);
             font-weight: 500;
         }
         
+        .menu a:hover {
+            color: var(--rosa);
+        }
+        
+        .btn-matricula {
+            background: var(--rosa);
+            color: white !important;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600 !important;
+        }
+        /* Hero */
+        
         .hero {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
+            padding: 80px 0;
         }
         
         .hero-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.2fr 0.8fr;
             gap: 60px;
             align-items: center;
         }
         
-        .tag {
+        .tag-selo {
             display: inline-block;
             padding: 8px 16px;
             background: var(--rosa-claro);
@@ -94,111 +134,81 @@
             border-radius: 30px;
             font-weight: 600;
             margin-bottom: 20px;
+            font-size: 0.85rem;
         }
         
-        .hero h1 {
-            font-size: 4rem;
+        .hero h2 {
+            font-size: 3.8rem;
+            font-weight: 800;
             line-height: 1.1;
             margin-bottom: 20px;
         }
         
         .hero p {
             font-size: 1.1rem;
-            color: var(--cinza);
-            margin-bottom: 25px;
-        }
-        
-        .socials {
-            display: flex;
-            gap: 20px;
+            color: var(--texto-secundario);
+            line-height: 1.6;
             margin-bottom: 30px;
-            flex-wrap: wrap;
+            max-width: 500px;
         }
         
-        .socials a {
-            text-decoration: none;
-            color: var(--cinza);
-            font-weight: 500;
-        }
-        
-        .socials a:hover {
-            color: var(--rosa);
-        }
-        
-        .btns {
+        .stats-hero {
             display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
+            gap: 40px;
         }
         
-        .btn-primary {
-            background: var(--rosa);
-            color: white;
-            padding: 14px 25px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        .btn-secondary {
-            border: 1px solid var(--borda);
-            color: var(--texto);
-            padding: 14px 25px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        .hero-image img {
-            width: 100%;
-            max-width: 600px;
-            border-radius: 25px;
-            box-shadow: 0 20px 50px rgba(231, 84, 166, .15);
-        }
-        
-        section {
-            padding: 100px 0;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-        
-        .section-subtitle {
-            color: var(--cinza);
-            margin-bottom: 40px;
-        }
-        
-        .stats {
-            background: var(--fundo);
-        }
-        
-        .stats-grid,
-        .tech-grid,
-        .project-grid,
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid var(--borda);
-        }
-        
-        .number {
-            font-size: 2rem;
+        .stat-item h3 {
+            font-size: 2.2rem;
             font-weight: 800;
             color: var(--rosa);
         }
         
-        .tech {
+        .stat-item p {
+            font-size: 0.9rem;
+            color: var(--texto-secundario);
+            margin-top: 4px;
+        }
+        
+        .hero-placeholder {
+            width: 100%;
+            height: 380px;
+            background: var(--rosa-claro);
+            border-radius: 25px;
+        }
+        /* Modalidades */
+        
+        .modalidades {
+            padding: 100px 0;
+            background: var(--fundo-site);
             text-align: center;
-            font-weight: 600;
+        }
+        
+        .section-title-centered {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 40px;
+        }
+        
+        .grid-modalidades {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .card-modalidade {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 20px;
+            border: 1px solid var(--borda);
+            text-align: center;
+        }
+        /* Galeria */
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
         
         .gallery-item {
@@ -212,22 +222,25 @@
             height: 100%;
             object-fit: cover;
         }
+        /* Portfólio */
         
-        .impact {
-            background: var(--rosa-claro);
-            text-align: center;
-            padding: 120px 20px;
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
         
-        .impact h2 {
-            font-size: 3rem;
-            max-width: 900px;
-            margin: auto;
-            line-height: 1.2;
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid var(--borda);
         }
+        /* Contato */
         
         .contact {
             text-align: center;
+            padding: 80px 0;
         }
         
         .contact-links {
@@ -238,11 +251,29 @@
             margin-top: 25px;
         }
         
+        .btn-primary {
+            background: var(--rosa);
+            color: white;
+            padding: 14px 25px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .btn-secondary {
+            border: 1px solid var(--borda);
+            color: var(--texto-principal);
+            padding: 14px 25px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
         footer {
             padding: 40px;
             text-align: center;
             border-top: 1px solid var(--borda);
-            color: var(--cinza);
+            color: var(--texto-secundario);
         }
         
         @media(max-width:900px) {
@@ -250,18 +281,11 @@
                 grid-template-columns: 1fr;
                 text-align: center;
             }
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            .btns,
-            .socials {
-                justify-content: center;
-            }
             .menu {
                 display: none;
             }
-            .impact h2 {
-                font-size: 2rem;
+            .hero h2 {
+                font-size: 2.8rem;
             }
         }
     </style>
@@ -269,258 +293,82 @@
 
 <body>
 
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="container">
+            <div class="topbar-left">
+                <span>📞 Secretaria Escolar: (43) 3274-4471</span>
+                <span>🕒 Horário: 7h às 17h (segunda a sexta)</span>
+            </div>
+            <div class="topbar-right">
+                <span>🌐 Gestão Democrática</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
     <header>
         <div class="container">
-
             <nav>
-
-                <div class="logo">
-                    Maria<span>.</span>
+                <div class="logo-container">
+                    <h1>EE Unidade Polo<span>.</span></h1>
+                    <p>Escola Estadual - Ensino Fundamental e Médio</p>
                 </div>
-
                 <div class="menu">
-                    <a href="#sobre">Sobre</a>
-                    <a href="#projetos">Projetos</a>
-                    <a href="#formacao">Formação</a>
+                    <a href="#inicio">Início</a>
+                    <a href="#modalidades">Modalidades</a>
+                    <a href="#galeria">Galeria</a>
+                    <a href="https://mariamoisesmoraes-jpg.github.io/portifolio-da-barbie/portifoli.html">Portfólio</a>
                     <a href="#contato">Contato</a>
+                    <a href="#matricula" class="btn-matricula">Matrícula 2025</a>
                 </div>
-
             </nav>
-
         </div>
     </header>
 
-    <section class="hero">
-
+    <!-- Hero -->
+    <section class="hero" id="inicio">
         <div class="container">
-
             <div class="hero-content">
-
                 <div>
-
-                    <div class="tag">
-                        Frontend Developer & UI Designer
+                    <div class="tag-selo">🎵 Educação Pública de Qualidade</div>
+                    <h2>Construindo futuros com excelência e cidadania</h2>
+                    <p>A EE Unidade Polo oferece ensino fundamental, médio e técnico integrado, com formação ética e tecnológica.</p>
+                    <div class="stats-hero">
+                        <div class="stat-item">
+                            <h3>+1.800</h3>
+                            <p>alunos ativos</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>98%</h3>
+                            <p>aprovação no ENEM</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>15</h3>
+                            <p>premiações estaduais</p>
+                        </div>
                     </div>
-
-                    <h1>
-                        Criando experiências digitais modernas e intuitivas.
-                    </h1>
-
-                    <p>
-                        Sou Maria Moisés, estudante de Desenvolvimento de Sistemas apaixonada por tecnologia, design e inovação.
-                    </p>
-
-                    <div class="socials">
-                        <a href="#">LinkedIn</a>
-                        <a href="#">GitHub</a>
-                        <a href="#">E-mail</a>
-                    </div>
-
-                    <div class="btns">
-                        <a href="https://mariamoisesmoraes-jpg.github.io/portifolio-da-barbie/portifoli.html" class="btn-primary">Ver Portfólio</a>
-                        <a href="#contato" class="btn-secondary">Contato</a>
-                    </div>
-
                 </div>
-
-                <div class="hero-image">
-
-                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Notebook">
-
+                <div>
+                    <div class="hero-placeholder"></div>
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
-    <section class="stats">
-
+    <!-- Modalidades -->
+    <section class="modalidades" id="modalidades">
         <div class="container">
-
-            <div class="stats-grid">
-
-                <div class="card">
-                    <div class="number">10+</div>
-                    <p>Projetos Desenvolvidos</p>
+            <h2 class="section-title-centered">Nossas Modalidades</h2>
+            <div class="grid-modalidades">
+                <div class="card-modalidade">
+                    <h4>Ensino Médio</h4>
+                    <p>Itinerários formativos + ENEM preparatório</p>
                 </div>
-
-                <div class="card">
-                    <div class="number">6+</div>
-                    <p>Tecnologias</p>
+                <div class="card-modalidade">
+                    <h4>Técnico em TI</h4>
+                    <p>Integrado ao Médio, inovação e tecnologia</p>
                 </div>
-
-                <div class="card">
-                    <div class="number">100%</div>
-                    <p>Responsivo</p>
-                </div>
-
-                <div class="card">
-                    <div class="number">DS</div>
-                    <p>Desenvolvimento de Sistemas</p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <section id="sobre">
-
-        <div class="container">
-
-            <h2 class="section-title">Sobre Mim</h2>
-
-            <p class="section-subtitle">
-                Estudante de tecnologia focada em desenvolvimento web, design de interfaces e criação de soluções digitais modernas.
-            </p>
-
-        </div>
-
-    </section>
-
-    <section>
-
-        <div class="container">
-
-            <h2 class="section-title">Tecnologias</h2>
-
-            <div class="tech-grid">
-
-                <div class="card tech">HTML</div>
-                <div class="card tech">CSS</div>
-                <div class="card tech">JavaScript</div>
-                <div class="card tech">Python</div>
-                <div class="card tech">GitHub</div>
-                <div class="card tech">Figma</div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <section id="projetos">
-
-        <div class="container">
-
-            <h2 class="section-title">Projetos em Destaque</h2>
-
-            <div class="project-grid">
-
-                <div class="card">
-                    <h3>Portfólio da Barbie</h3>
-                    <p>Projeto pessoal com identidade visual única.</p>
-                </div>
-
-                <div class="card">
-                    <h3>App Pet Shop</h3>
-                    <p>Aplicação voltada para gestão de pet shops.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Landing Pages</h3>
-                    <p>Sites modernos e responsivos.</p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <section id="formacao">
-
-        <div class="container">
-
-            <h2 class="section-title">Formação Acadêmica</h2>
-
-            <div class="card">
-
-                <h3>Colégio Estadual Unidade Polo</h3>
-
-                <p>
-                    Ensino Médio Profissionalizante integrado ao curso Técnico em Desenvolvimento de Sistemas.
-                </p>
-
-                <br>
-
-                <p>
-                    A instituição atende estudantes do 6º ano do Ensino Fundamental ao 3º ano do Ensino Médio e oferece formação voltada para tecnologia, inovação e preparação para o mercado de trabalho.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <section>
-
-        <div class="container">
-
-            <h2 class="section-title">Galeria da Escola</h2>
-
-            <div class="gallery-grid">
-
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
-                </div>
-
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop">
-                </div>
-
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop">
-                </div>
-
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop">
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <section class="impact">
-
-        <h2>
-            Transformando ideias em experiências digitais através da tecnologia.
-        </h2>
-
-    </section>
-
-    <section id="contato" class="contact">
-
-        <div class="container">
-
-            <h2 class="section-title">Vamos Conversar?</h2>
-
-            <p class="section-subtitle">
-                Entre em contato através das minhas redes.
-            </p>
-
-            <div class="contact-links">
-
-                <a href="#" class="btn-primary">LinkedIn</a>
-                <a href="#" class="btn-secondary">GitHub</a>
-                <a href="#" class="btn-secondary">E-mail</a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <footer>
-        © 2026 Maria Moisés • Front-End Developer
-    </footer>
-
-</body>
-
-</html>
+                <div class="card-modalidade">
+                    <h4>Inteligência Artificial</h4>
+                    <p>Robótica
