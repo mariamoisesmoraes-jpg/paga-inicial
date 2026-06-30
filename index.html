@@ -5,17 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EE Unidade Polo | Maria Moisés</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="description" content="EE Unidade Polo - Ensino Fundamental, Médio e Técnico Integrado. Educação pública de qualidade com foco em cidadania e tecnologia.">
+    <link href="https://mariamoisesmoraes-jpg.github.io/portifolio-da-barbie/portifoli.html" rel="stylesheet">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
-        
          :root {
             --rosa: #E754A6;
             --rosa-claro: #FFF2F8;
@@ -25,15 +18,45 @@
             --fundo-site: #FAFAFA;
         }
         
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
         body {
-            background: white;
+            background: var(--fundo-site);
             color: var(--texto-principal);
+            line-height: 1.6;
+            transition: background 0.3s ease, color 0.3s ease;
         }
         
         .container {
             width: 90%;
             max-width: 1200px;
             margin: auto;
+        }
+        /* Botão de alternância */
+        
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--rosa);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            z-index: 200;
+        }
+        
+        .toggle-btn:hover {
+            background: #d13f8f;
         }
         /* Topbar */
         
@@ -42,6 +65,7 @@
             color: white;
             font-size: 0.85rem;
             padding: 10px 0;
+            transition: background 0.3s ease;
         }
         
         .topbar .container {
@@ -51,11 +75,6 @@
             flex-wrap: wrap;
             gap: 10px;
         }
-        
-        .topbar-left {
-            display: flex;
-            gap: 20px;
-        }
         /* Header */
         
         header {
@@ -64,6 +83,7 @@
             background: white;
             border-bottom: 1px solid var(--borda);
             z-index: 100;
+            transition: background 0.3s ease;
         }
         
         nav {
@@ -74,7 +94,7 @@
         }
         
         .logo-container h1 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 800;
         }
         
@@ -100,6 +120,7 @@
             text-decoration: none;
             color: var(--texto-principal);
             font-weight: 500;
+            transition: color 0.3s ease;
         }
         
         .menu a:hover {
@@ -112,53 +133,43 @@
             padding: 12px 24px;
             border-radius: 30px;
             font-weight: 600 !important;
+            transition: background 0.3s ease;
+        }
+        
+        .btn-matricula:hover {
+            background: #d13f8f;
         }
         /* Hero */
         
         .hero {
             padding: 80px 0;
-        }
-        
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 60px;
-            align-items: center;
-        }
-        
-        .tag-selo {
-            display: inline-block;
-            padding: 8px 16px;
-            background: var(--rosa-claro);
-            color: var(--rosa);
-            border-radius: 30px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            font-size: 0.85rem;
+            text-align: center;
         }
         
         .hero h2 {
-            font-size: 3.8rem;
+            font-size: 3rem;
             font-weight: 800;
-            line-height: 1.1;
             margin-bottom: 20px;
         }
         
         .hero p {
             font-size: 1.1rem;
             color: var(--texto-secundario);
-            line-height: 1.6;
             margin-bottom: 30px;
-            max-width: 500px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .stats-hero {
             display: flex;
+            justify-content: center;
             gap: 40px;
+            flex-wrap: wrap;
         }
         
         .stat-item h3 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: 800;
             color: var(--rosa);
         }
@@ -166,21 +177,14 @@
         .stat-item p {
             font-size: 0.9rem;
             color: var(--texto-secundario);
-            margin-top: 4px;
-        }
-        
-        .hero-placeholder {
-            width: 100%;
-            height: 380px;
-            background: var(--rosa-claro);
-            border-radius: 25px;
         }
         /* Modalidades */
         
         .modalidades {
             padding: 100px 0;
-            background: var(--fundo-site);
+            background: white;
             text-align: center;
+            transition: background 0.3s ease;
         }
         
         .section-title-centered {
@@ -197,11 +201,15 @@
         }
         
         .card-modalidade {
-            background: white;
+            background: var(--fundo-site);
             padding: 35px 25px;
             border-radius: 20px;
             border: 1px solid var(--borda);
-            text-align: center;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        
+        .card-modalidade:hover {
+            transform: translateY(-5px);
         }
         /* Galeria */
         
@@ -235,12 +243,45 @@
             padding: 30px;
             border-radius: 20px;
             border: 1px solid var(--borda);
+            transition: background 0.3s ease;
         }
         /* Contato */
         
         .contact {
             text-align: center;
             padding: 80px 0;
+        }
+        
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 20px auto;
+        }
+        
+        .contact input,
+        .contact textarea {
+            padding: 12px;
+            border: 1px solid var(--borda);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        
+        .contact button {
+            background: var(--rosa);
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .contact button:hover {
+            background: #d13f8f;
         }
         
         .contact-links {
@@ -274,24 +315,76 @@
             text-align: center;
             border-top: 1px solid var(--borda);
             color: var(--texto-secundario);
+            font-size: 0.9rem;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        /* Tema escuro */
+        
+        body.dark-mode {
+            background-color: #0D0D0D;
+            color: #FAFAFA;
         }
         
-        @media(max-width:900px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
+        body.dark-mode header {
+            background-color: body.dark-mode header {
+                background-color: #1A1A1A;
+                border-bottom: 1px solid #333;
             }
-            .menu {
-                display: none;
-            }
-            .hero h2 {
-                font-size: 2.8rem;
-            }
+        }
+        
+        body.dark-mode .topbar {
+            background-color: #111;
+            color: #FAFAFA;
+        }
+        
+        body.dark-mode .menu a {
+            color: #FAFAFA;
+        }
+        
+        body.dark-mode .menu a:hover {
+            color: #E754A6;
+        }
+        
+        body.dark-mode .btn-matricula,
+        body.dark-mode .btn-primary {
+            background-color: #E754A6;
+            color: #FAFAFA;
+        }
+        
+        body.dark-mode .card,
+        body.dark-mode .card-modalidade {
+            background-color: #1A1A1A;
+            border: 1px solid #333;
+            color: #FAFAFA;
+        }
+        
+        body.dark-mode .gallery-item {
+            border: 2px solid #333;
+        }
+        
+        body.dark-mode .btn-secondary {
+            border: 1px solid #FAFAFA;
+            color: #FAFAFA;
+        }
+        
+        body.dark-mode input,
+        body.dark-mode textarea {
+            background-color: #111;
+            color: #FAFAFA;
+            border: 1px solid #333;
+        }
+        
+        body.dark-mode footer {
+            background-color: #111;
+            color: #FAFAFA;
         }
     </style>
 </head>
 
 <body>
+
+    <!-- Botão de alternância -->
+    <button class="toggle-btn" onclick="toggleTheme()">Alternar Tema 🌗</button>
 
     <!-- Topbar -->
     <div class="topbar">
@@ -318,7 +411,7 @@
                     <a href="#inicio">Início</a>
                     <a href="#modalidades">Modalidades</a>
                     <a href="#galeria">Galeria</a>
-                    <a href="https://mariamoisesmoraes-jpg.github.io/portifolio-da-barbie/portifoli.html">Portfólio</a>
+                    <a href="https://mariamoisesmoraes-jpg.github.io/portifolio-da-barbie/portifoli.html" target="_blank">Portfólio</a>
                     <a href="#contato">Contato</a>
                     <a href="#matricula" class="btn-matricula">Matrícula 2026</a>
                 </div>
@@ -329,28 +422,20 @@
     <!-- Hero -->
     <section class="hero" id="inicio">
         <div class="container">
-            <div class="hero-content">
-                <div>
-                    <div class="tag-selo">🎵 Educação Pública de Qualidade</div>
-                    <h2>Construindo futuros com excelência e cidadania</h2>
-                    <p>A EE Unidade Polo oferece ensino fundamental, médio e técnico integrado, com formação ética e tecnológica.</p>
-                    <div class="stats-hero">
-                        <div class="stat-item">
-                            <h3>+1.800</h3>
-                            <p>alunos ativos</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>98%</h3>
-                            <p>aprovação no ENEM</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>15</h3>
-                            <p>premiações estaduais</p>
-                        </div>
-                    </div>
+            <h2>Educação que transforma vidas</h2>
+            <p>Na EE Unidade Polo, oferecemos ensino fundamental, médio e técnico com foco em cidadania, ética e tecnologia.</p>
+            <div class="stats-hero">
+                <div class="stat-item">
+                    <h3>+1.800</h3>
+                    <p>Alunos ativos</p>
                 </div>
-                <div>
-                    <div class="hero-placeholder"></div>
+                <div class="stat-item">
+                    <h3>98%</h3>
+                    <p>Aprovação no ENEM</p>
+                </div>
+                <div class="stat-item">
+                    <h3>15</h3>
+                    <p>Premiações estaduais</p>
                 </div>
             </div>
         </div>
@@ -363,12 +448,98 @@
             <div class="grid-modalidades">
                 <div class="card-modalidade">
                     <h4>Ensino Médio</h4>
-                    <p>Itinerários formativos + ENEM preparatório</p>
+                    <p>Itinerários formativos, preparação para o ENEM e vestibulares.</p>
                 </div>
                 <div class="card-modalidade">
                     <h4>Técnico em TI</h4>
-                    <p>Integrado ao Médio, inovação e tecnologia</p>
+                    <p>Curso integrado ao médio com foco em inovação e tecnologia.</p>
                 </div>
                 <div class="card-modalidade">
                     <h4>Inteligência Artificial</h4>
-                    <p>Robótica
+                    <p>Projetos de robótica, programação e ciência de dados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section id="galeria">
+        <div class="container">
+            <h2 class="section-title-centered">Galeria</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="feira de ciências.png" alt="Feira de Ciências"></div>
+                <div class="gallery-item"><img src="feira cultural.png" alt="Apresentação cultural"></div>
+                <div class="gallery-item"><img src="feira de t.i" alt="Laboratório de TI"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- alguma coisa -->
+    <section id="alguma coisa">
+        <div class="container">
+            <h2 class="section-title-centered">Projetos</h2>
+            <div class="project-grid">
+                <div class="card">
+                    <h4>Robótica Educacional</h4>
+                    <p>Alunos desenvolveram protótipos premiados em competições estaduais.</p>
+                </div>
+                <div class="card">
+                    <h4>Aplicativos Mobile</h4>
+                    <p>Projetos de programação com impacto social.</p>
+                </div>
+                <div class="card">
+                    <h4>Artes Visuais</h4>
+                    <p>Exposições culturais e participação em festivais regionais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="contact" id="contato">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <p>Estamos à disposição para tirar dúvidas e ajudar na matrícula.</p>
+            <form>
+                <input type="text" placeholder="Seu nome" required>
+                <input type="email" placeholder="Seu e-mail" required>
+                <textarea placeholder="Sua mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            <div class="contact-links">
+                <a href="tel:+554332744471" class="btn-secondary">📞 (43) 3274-4471</a>
+                <a href="https://wa.me/554332744471" class="btn-secondary">💬 WhatsApp</a>
+                <a href="https://www.linkedin.com/in/seulinkedin" class="btn-secondary" target="_blank">💼 LinkedIn</a>
+                <a href="mailto:seuemail@exemplo.com" class="btn-secondary">📧 E-mail</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Matrícula -->
+    <section id="matricula">
+        <div class="container" style="text-align:center; padding:60px 0;">
+            <h2>Inscrições Abertas - 2026</h2>
+            <p>Garanta sua vaga no Ensino Fundamental, Médio ou Técnico Integrado.</p>
+            <a href="formulario-matricula.html" class="btn-matricula">📌 Fazer Matrícula</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 EE Unidade Polo | Maria Moisés - Todos os direitos reservados.</p>
+        <div class="contact-links" style="margin-top:15px;">
+            <a href="https://www.linkedin.com/in/seulinkedin" target="_blank">💼 LinkedIn</a> |
+            <a href="maria.moises.moraes@rescola.pr.gov.br">📧 E-mail</a>
+        </div>
+    </footer>
+
+    <!-- Script para alternar tema -->
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+
+</body>
+
+</html>
